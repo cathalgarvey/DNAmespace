@@ -40,26 +40,39 @@ this:
 preferred prompt)
 
 In [0]: import dnamespace
+
 In [1]: ecoli_w3110 = dnamespace.new("test_genomes/E.coli_K12_W3110.gbk")
-# dnamespace objects present genome features (presently only genes) as
-# object attributes, enabling tab-completion in iPython and other
-# smart shells:
-In [2]: ecoliw3110.lac<tab>
-ecoliw3110.lacA  ecoliw3110.lacI  ecoliw3110.lacY  ecoliw3110.lacZ
-In [3]: ecoliw3110.lacZ.<tab>
-Ecoli.lacZ.amino        Ecoli.lacZ.meta         Ecoli.lacZ.sequence
-Ecoli.lacZ.aminos       Ecoli.lacZ.orfs         Ecoli.lacZ.transcript
-Ecoli.lacZ.features     Ecoli.lacZ.rna          Ecoli.lacZ.transcripts
-# To ensure compatibility with operons as well as singular genes,
-# gene objects retain lists for transcripts (CDSs and soon RNA),
-# orfs (protein-coding subset of transcripts), rnas (non-protein-coding
-# rnas), and translated CDSs. For each list (designated by the plural),
-# there is a singular property which returns the first item in the list,
-# or None if the list is empty.
-In [4]: ecoliw3110.lacZ.transcripts
-Out[4]: ['ATGACCATGATTACGGATTCACTG...TGTCAAAAATAA']
-In [5]: ecoliw3110.lacZ.transcript
-Out[5]: 'ATGACCATGATTACGGATTCACTG...TGTCAAAAATAA'
+
+DNAmespace objects present genome features (presently only genes) as
+object attributes, enabling tab-completion in iPython and other
+smart shells:
+
+*In [2]: ecoliw3110.lac<tab>*
+
+_ecoliw3110.lacA  ecoliw3110.lacI  ecoliw3110.lacY  ecoliw3110.lacZ_
+
+*In [3]: ecoliw3110.lacZ.<tab>*
+
+_Ecoli.lacZ.amino        Ecoli.lacZ.meta         Ecoli.lacZ.sequence_
+_Ecoli.lacZ.aminos       Ecoli.lacZ.orfs         Ecoli.lacZ.transcript_
+_Ecoli.lacZ.features     Ecoli.lacZ.rna          Ecoli.lacZ.transcripts_
+
+
+To ensure compatibility with operons as well as singular genes,
+gene objects retain lists for transcripts (CDSs and soon RNA),
+orfs (protein-coding subset of transcripts), rnas (non-protein-coding
+rnas), and translated CDSs. For each list (designated by the plural),
+there is a singular property which returns the first item in the list,
+or None if the list is empty.
+
+*In [4]: ecoliw3110.lacZ.transcripts*
+
+*Out[4]: ['ATGACCATGATTACGGATTCACTG...TGTCAAAAATAA']*
+
+*In [5]: ecoliw3110.lacZ.transcript*
+
+*Out[5]: 'ATGACCATGATTACGGATTCACTG...TGTCAAAAATAA'*
+
 
 ## Code Layout
 You might want to re-use bits of DNAmespace separately, and I'll try to
