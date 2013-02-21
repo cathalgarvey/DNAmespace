@@ -22,33 +22,22 @@ regulatory regions and other DNA features they wish to refactor, and reassemble
 them into a target genome, in a prompt environment. Perhaps it would look like
 this:
 
-> import genomebuilder # Not yet implemeted
-
-> import dnamespace
-
-> NewGenome = genomebuilder.new(codon_table="11") # Not yet implemented
-
-> with dnamespace.new("oldgenome") as Source: # Not yet implemented
-
->     for gene in Source._gene_list: # Not yet implemented.
-
->         NewGenome.add_gene(gene) # Not yet implemented
-
->     for ncRNA in Source._ncrna_list: # Not yet implemented.
-
->         NewGenome.add_ncRNA(ncRNA) # Not yet implemented
-
->     # And all the other stuff one might copy over..
-
->     NewGenome.ori = Source.origin # Not yet implemented
-
-> NewGenome.add_gene(genomebuilder.viral_bootstrapper(NewGenome)) # Not yet implemented
-
-> NewGenome.add_signature("This genome was built by Cathal.") # Not yet implemented
-
-> with open("newgenome",mode="w") as Output:
-
->     Output.write(str(NewGenome)) # Not yet implemented
+```python
+import genomebuilder # Not yet implemeted
+import dnamespace
+NewGenome = genomebuilder.new(codon_table="11") # Not yet implemented
+with dnamespace.new("oldgenome") as Source: # Not yet implemented
+    for gene in Source._gene_list: # Not yet implemented.
+        NewGenome.add_gene(gene) # Not yet implemented
+    for ncRNA in Source._ncrna_list: # Not yet implemented.
+        NewGenome.add_ncRNA(ncRNA) # Not yet implemented
+    # And all the other stuff one might copy over..
+    NewGenome.ori = Source.origin # Not yet implemented
+NewGenome.add_gene(genomebuilder.viral_bootstrapper(NewGenome)) # Not yet implemented
+NewGenome.add_signature("This genome was built by Cathal.") # Not yet implemented
+with open("newgenome",mode="w") as Output:
+    Output.write(str(NewGenome)) # Not yet implemented
+```
 
 ## Usage
 (Below sample in/out is in iPython, tab completion may not work in your
@@ -62,11 +51,11 @@ DNAmespace objects present genome features (presently only genes) as
 object attributes, enabling tab-completion in iPython and other
 smart shells:
 
-**In [2]: ecoliw3110.lac<tab>**
+**In [2]: ecoliw3110.lac-tab-**
 
 _ecoliw3110.lacA  ecoliw3110.lacI  ecoliw3110.lacY  ecoliw3110.lacZ_
 
-**In [3]: ecoliw3110.lacZ.<tab>**
+**In [3]: ecoliw3110.lacZ.-tab-**
 
 _Ecoli.lacZ.amino        Ecoli.lacZ.meta         Ecoli.lacZ.sequence_
 _Ecoli.lacZ.aminos       Ecoli.lacZ.orfs         Ecoli.lacZ.transcript_
