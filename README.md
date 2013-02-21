@@ -1,5 +1,6 @@
 # DNAmespace
 Copyright: Cathal Garvey
+
 License: GNU Affero General Public License v3
 (License text included as dnamespace.license in Python prompt)
 
@@ -78,7 +79,7 @@ rnas), and translated CDSs. For each list (designated by the plural),
 there is a singular property which returns the first item in the list,
 or None if the list is empty.
 
-**In [4]: ecoliw3110.lacZ.transcripts*
+**In [4]: ecoliw3110.lacZ.transcripts**
 
 *Out[4]: ['ATGACCATGATTACGGATTCACTG...TGTCAAAAATAA']*
 
