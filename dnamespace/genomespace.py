@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''DNAmespace, a namespace-like interface to bacterial genomes.
 by Cathal Garvey, licensed under the GNU Affero GPLv3 license.
-License text can be accessed via dnamespace.license.
+License text can be accessed via dnamespace.license
 Email: cathalgarvey@cathalgarvey.me
 Twitter: @onetruecathal
 Code: https://gitorious.org/~cathalgarvey
@@ -29,9 +29,9 @@ and has a list property called "cistrons". The "cds" property in the
 case of any given gene, polycistronic or no, contains the *first* CDS
 feature in the *feature table*, not necessarily the first in-sequence.
 '''
-import parsegb
-import virtualns
-from gnulicenses import Affero as license
+from dnamespace import parsegb
+from dnamespace import virtualns
+from dnamespace.gnulicenses import Affero as license
 
 # ecoli.<tab>
 # ecoli.geneN - All gene names represented as attributes.
@@ -79,7 +79,7 @@ class geneNS(virtualns.nsdict):
     @property
     def amino(self):
         if self['aminos']:
-            return self['amino'][0]
+            return self['aminos'][0]
 
     def _import_gbfeature(self, gbfeature):
         'Enters a GBFeature object into namespace structure.'
@@ -159,8 +159,7 @@ class geneNS(virtualns.nsdict):
         # function: self-explanatory
         # product: Often describes the translation product.
 
-
-class dnamespace:
+class genomespace:
     '''Provides a namespace-like object interface to a genbank file.'''
     def __init__(self, gb_file, keepfile=False):
         'Should be created with a path or filename for a valid genbank file.'

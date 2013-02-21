@@ -2,7 +2,7 @@
 by Cathal Garvey
 Part of the DNAmespace project. License accessible as nucutils.license.
 '''
-from gnulicenses import Affero as license
+from dnamespace.gnulicenses import Affero as license
 
 iupac_characters = [ 'A', 'T', 'C', 'G', 'U',    # Canonical bases
                      'B', 'V', 'D', 'H',     # B=Not A, V=Not T, D=Not C, H=Not G

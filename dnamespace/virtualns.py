@@ -5,7 +5,7 @@ as virtualns.license in a python prompt or script.
 Designed as part of the DNAmespace project.
 '''
 import keyword
-from gnulicenses import Affero as license
+from dnamespace.gnulicenses import Affero as license
 
 class nsdict(object):
     '''Mimics a dict but has no exposed methods, and exposes all keys as attributes.

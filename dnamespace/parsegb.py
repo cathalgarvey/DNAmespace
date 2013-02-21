@@ -21,7 +21,8 @@ invert/complement the target sequence into a contiguous string accessible by
 the property self.sequence.
 '''
 
-import nucutils
+from dnamespace import nucutils
+from dnamespace.gnulicenses import Affero as license
 import re
 
 class GBFeature:
